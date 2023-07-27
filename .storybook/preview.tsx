@@ -15,13 +15,15 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <TamaguiProvider config={config}>
-        <View style={{ alignItems: "flex-start" }}>
-          <Story />
-        </View>
-      </TamaguiProvider>
-    ),
+    (Story) => {
+      return (
+        <TamaguiProvider config={config}>
+          <View style={{ alignItems: "flex-start" }}>
+            <Story />
+          </View>
+        </TamaguiProvider>
+      );
+    },
   ],
 };
 
