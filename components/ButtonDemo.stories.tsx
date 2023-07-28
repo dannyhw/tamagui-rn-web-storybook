@@ -1,5 +1,4 @@
 import { Meta } from "@storybook/react";
-
 import { ButtonDemo } from "./ButtonDemo";
 
 export default {

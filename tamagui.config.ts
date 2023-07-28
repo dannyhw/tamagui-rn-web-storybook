@@ -1,7 +1,6 @@
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
 import { createFont, createTamagui } from "tamagui";
-
 export default createTamagui({
   themes,
   tokens,
