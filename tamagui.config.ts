@@ -1,21 +1,23 @@
-import { config } from "@tamagui/config";
-
-import { Text, View } from "react-native";
-
-import { createTamagui } from "tamagui"; // or '@tamagui/core'
-// if using only @tamagui/core with `react-native` components
-
-// if using `tamagui` this isn't necessary as it does this setup for you (for most components)
-
-const appConfig = createTamagui(config);
-export type AppConfig = typeof appConfig;
-declare module "tamagui" {
-  // or '@tamagui/core'
-
-  // overrides TamaguiCustomConfig so your custom types
-
-  // work everywhere you import `tamagui`
-
-  interface TamaguiCustomConfig extends AppConfig {}
-}
-export default appConfig;
+import { shorthands } from "@tamagui/shorthands";
+import { themes, tokens } from "@tamagui/themes";
+import { createFont, createTamagui } from "tamagui";
+export default createTamagui({
+  themes,
+  tokens,
+  shorthands,
+  fonts: {
+    body: createFont({
+      family: "Arial",
+      size: {
+        // You'll want to fill these values in so you can use them
+        // for now, fontSize="$4" will be 14px.
+        // You can define different keys, but `tamagui`
+        // standardizes on 1-15.
+        4: 14,
+      },
+      lineHeight: {
+        4: 16,
+      },
+    }),
+  },
+});
